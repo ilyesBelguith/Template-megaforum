@@ -1,0 +1,172 @@
+<style>
+
+    .grid-container {
+        display: grid;
+        align-content: center;
+        grid-template-columns: 100px auto auto;
+        background-color: transparent;
+        padding: 1px;
+    }
+    .grid-container > div {
+        background-color: #AAAAAA;
+        text-align: center;
+        font-size: 12px;
+    }
+    .selectt:hover{
+        background-color: #F0F0EE;
+    }
+    * { box-sizing:border-box; }
+    /* form starting stylings ------------------------------- */
+    .group 			  {
+        position:relative;
+        margin-bottom:45px;
+    }
+    input 				{
+        font-size:18px;
+        padding:10px 10px 10px 5px;
+        display:block;
+        width:300px;
+        border:none;
+        border-bottom:1px solid #757575;
+    }
+    input:focus 		{ outline:none; }
+
+    /* LABEL ======================================= */
+    label 				 {
+        color:#999;
+        font-size:18px;
+        font-weight:normal;
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top:10px;
+        transition:0.2s ease all;
+        -moz-transition:0.2s ease all;
+        -webkit-transition:0.2s ease all;
+    }
+
+    /* active state */
+    input:focus ~ label, input:valid ~ label 		{
+        top:-20px;
+        font-size:14px;
+        color:#5264AE;
+    }
+
+    /* BOTTOM BARS ================================= */
+    .bar 	{ position:relative; display:block; width:300px; }
+    .bar:before, .bar:after 	{
+        content:'';
+        height:2px;
+        width:0;
+        bottom:1px;
+        position:absolute;
+        background:#5264AE;
+        transition:0.2s ease all;
+        -moz-transition:0.2s ease all;
+        -webkit-transition:0.2s ease all;
+    }
+    .bar:before {
+        left:50%;
+    }
+    .bar:after {
+        right:50%;
+    }
+
+    /* active state */
+    input:focus ~ .bar:before, input:focus ~ .bar:after {
+        width:50%;
+    }
+
+    /* HIGHLIGHTER ================================== */
+    .highlight {
+        position:absolute;
+        height:60%;
+        width:100px;
+        top:25%;
+        left:0;
+        pointer-events:none;
+        opacity:0.5;
+    }
+
+    /* active state */
+    input:focus ~ .highlight {
+        -webkit-animation:inputHighlighter 0.3s ease;
+        -moz-animation:inputHighlighter 0.3s ease;
+        animation:inputHighlighter 0.3s ease;
+    }
+
+    /* ANIMATIONS ================ */
+    @-webkit-keyframes inputHighlighter {
+        from { background:#5264AE; }
+        to 	{ width:0; background:transparent; }
+    }
+    @-moz-keyframes inputHighlighter {
+        from { background:#5264AE; }
+        to 	{ width:0; background:transparent; }
+    }
+    @keyframes inputHighlighter {
+        from { background:#5264AE; }
+        to 	{ width:0; background:transparent; }
+    }
+</style>
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="#" >{{getTitle()}}</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+
+
+
+                        <p class="hidden-lg hidden-md">{{getTitle()}}</p>
+
+
+
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <form class="form-inline" style="padding-right: 150px">
+
+
+                        <input type="text" class="form-control" placeholder="Search">
+                        <sup><button class="btn btn-danger glyphicon glyphicon-search" type="submit"></button></sup>
+                    </form>
+
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-globe"></i>
+
+                        <b class="caret"></b>
+
+                        <span class="notification" style="width: 10px">5</span>
+                        <p class="hidden-lg hidden-md">
+                            5 Notifications
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Notification 1</a></li>
+                        <li><a href="#">Notification 2</a></li>
+                        <li><a href="#">Notification 3</a></li>
+                        <li><a href="#">Notification 4</a></li>
+                        <li><a href="#">Another notification</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>Log out</p>
+                    </a>
+                </li>
+                <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+        </div>
+    </div>
+</nav>

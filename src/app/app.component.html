@@ -1,0 +1,24 @@
+
+<div class="wrapper" *ngIf="isLoggedIn">
+    <div class="sidebar" data-color="red" data-image="">
+        <app-sidebar></app-sidebar>
+
+        <div class="sidebar-background" style="background-image: url(../assets/img/vermeg.jpg)"></div>
+    </div>
+
+    <div class="main-panel">
+        <navbar-cmp></navbar-cmp>
+
+        <div *ngIf="isMap('maps')">
+            <router-outlet></router-outlet>
+
+            <footer-cmp></footer-cmp>
+        </div>
+
+    </div>
+
+</div>
+        <div *ngIf="!isLoggedIn">
+            <router-outlet></router-outlet>
+        </div>
+

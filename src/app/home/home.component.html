@@ -1,0 +1,181 @@
+<style>
+    .item1 { grid-area: header; }
+    .item2 { grid-area: menu; }
+    .item3 { grid-area: main; }
+    .item4 { grid-area: right; }
+    .item5 { grid-area: footer; }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+        'header header header header header '
+        'main main main right menu ';
+        grid-gap: 10px;
+        background-color: transparent;
+        padding: 0px;
+    }
+    .grid-container > div {
+        background-color:transparent;
+
+        padding: 20px 0;
+
+    }
+    hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+    }
+
+</style>
+
+<div class="container" style="width: 1055px;">
+
+
+    <h4><b>All Questions </b></h4>
+    <br>
+    <div class="container"   style="   width: 1055px;">
+        <ul class="nav nav-pills">
+            <li class="active"><a  data-toggle="pill" href="#home">Newest</a></li>
+            <li><a data-toggle="pill" href="#menu2">Favourite</a></li>
+            <li><a data-toggle="pill" href="#menu3">Most commented</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <hr>
+
+                    <h3>Newest</h3>
+
+                <div class="grid-container">
+                    <div class="item3">
+                        <tr *ngFor="let row of newest, let i=index" >
+
+                                    <div class="selectt" (click)="onselectnewest(i)">
+
+
+                                        <br>
+                                        <div><td style="color: #0976b4"><h5>{{row.title}}</h5></td></div>
+                                        <br>
+                                        <div><td style="color:#101010">{{row.content}}</td></div>
+                                        <br>
+
+                                        <td *ngFor="let tag of row.tags">
+                                            <span class="badge">{{tag}}</span>
+                                        </td>
+
+                                        <br>
+                                        <div style="padding-left: 350px"><td style="color: #101010"> asked {{row.date}}</td>
+                                            <div class="card-user">
+                                                <td>{{user.Name}} <img src="https://www.wikihow.com/images/f/ff/Draw-a-Cute-Cartoon-Person-Step-14.jpg" style="width: 30px; height: 30px"></td>
+
+                                            </div>
+
+                                        </div>
+                                        <br>
+                                    </div>
+                            <hr>
+                        </tr>
+                    </div>
+                    <div class="item4" style="background-color: #cccccc">
+                        <p>Still have a question? Ask your own!</p>
+                       <div>
+                           <button type="button" class="btn btn-danger btn-rounded" (click)="navigatetosearch()">Ask question</button>
+                       </div>
+                        <hr>
+                        <app-typography></app-typography>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="menu2" class="tab-pane fade">
+                <hr>
+                <h3>Favourite</h3>
+                <div class="grid-container">
+                    <div class="item3">
+                <tr *ngFor="let row of questions">
+                    <a>
+
+                                <div class="selectt" (click)="onselectfrequent(i)">
+                                    <br>
+                                    <div><td style="color: #0976b4">{{row.title}}</td></div>
+                                    <br>
+                                    <div><td style="color:#101010">{{row.content}}</td></div>
+                                    <br>
+                                    <td *ngFor="let tag of row.tags">
+                                        <span class="badge">{{tag}}</span>
+
+                                    </td>
+
+                                    <br>
+                                    <div style="padding-left: 350px"><td style="color: #101010"> asked {{row.date}}</td>
+                                        <div class="card-user">
+                                            <td>{{user2.Name}} <img src="https://s-media-cache-ak0.pinimg.com/originals/99/b0/09/99b0093051705a1a4249d7df6d6ffff5.jpg" style="width: 30px; height: 30px">
+                                            </td>
+                                        </div>
+                                    </div>
+                                </div>
+                    </a>
+                </tr>
+                        </div>
+
+                    <div class="item4" style="background-color: #cccccc">
+                        <p>Still have a question? Ask your own!</p>
+                        <div>
+                            <button type="button" class="btn btn-danger btn-rounded" (click)="navigatetosearch()">Ask question</button>
+                        </div>
+                        <hr>
+                        <app-typography></app-typography>
+                    </div>
+            </div>
+
+
+            </div>
+            <div id="menu3" class="tab-pane fade">
+                <hr>
+                <h3>Most commented</h3>
+                <div class="grid-container">
+                    <div class="item3">
+                       No question found!
+                    </div>
+
+                    <div class="item4" style="background-color: #cccccc">
+                        <p>Still have a question? Ask your own!</p>
+                        <div>
+                            <button type="button" class="btn btn-danger btn-rounded" (click)="navigatetosearch()">Ask question</button>
+                        </div>
+                        <hr>
+                        <app-typography></app-typography>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Page navigation" style="padding-left: 50px">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+<button (click)="gettitle()"></button>
+        <p>{{titre}}</p>

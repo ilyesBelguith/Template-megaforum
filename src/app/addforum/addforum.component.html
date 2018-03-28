@@ -1,0 +1,79 @@
+
+
+<div class="container">
+    <div class="panel panel-default">
+
+
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+
+            <a (click)="favourite()">
+
+                <div *ngIf="star">
+                        <img align="right" src="../assets/img/star.png" style="width: 35px; height: 35px" title="Add to favourite">
+                </div>
+               <div  *ngIf="!star">
+                   <img align="right" src="../assets/img/star2.png" style="width: 35px; height: 35px" title="Remove from favourite">
+               </div>
+
+            </a>
+            <h4><b>{{title}}</b></h4></div>
+        <div class="panel-body">
+            <label>Description:</label>
+            <p>{{description}}</p>
+            <label>Tags:</label>
+            <span class="badge">{{tags}}</span>
+        </div>
+
+    </div>
+    <label>Comments:</label>
+
+
+    <tr>
+        <td>
+
+
+                <tr *ngFor="let row of comm let i=index"  >
+            <div class="well">
+                    <td>
+                        {{row.CommentContent}}
+                    </td>
+
+                <img src="https://www.wikihow.com/images/f/ff/Draw-a-Cute-Cartoon-Person-Step-14.jpg" style="width: 30px; height: 30px">
+
+                <br>
+                <div *ngIf="resp" style="padding-left: 40px">
+                    <button [disabled]="!b" class="btn glyphicon glyphicon-thumbs-up" [ngClass]="{'btn-secondary ': c, ' btn-danger': !c }" (click)="click()" > Like</button>
+                    <button  [disabled]="!c" class="btn glyphicon glyphicon-thumbs-down" [ngClass]="{'btn-secondary ': b, ' btn-danger': !b }" (click)="clickd()"> Dislike</button>
+                    <button class="btn btn-warning glyphicon glyphicon-comment" (click)="like()"> Answer</button>
+                    <tr *ngFor="let row of r"  >
+                        <br>
+                        <div class="well">
+                        <td>
+                            <img src="https://www.wikihow.com/images/f/ff/Draw-a-Cute-Cartoon-Person-Step-14.jpg" style="width: 30px; height: 30px"> {{row.Rcontent}}
+                        </td>
+                        </div>
+                    </tr>
+                </div>
+            </div>
+                </tr>
+                <div *ngIf="!resp" style="padding-left: 50px">
+                    <form class="form-inline ">
+                    <input type="text" [(ngModel)]="response" name="response" class="form-control" placeholder="Comment" required> <button class="btn" (click)="respond()">OK</button>
+                    </form>
+               </div>
+
+        </td>
+    </tr>
+
+    <br>
+    <b>Your answer :</b>
+
+    <div style="padding-left: 20px">
+        <br>
+        <div [froalaEditor]></div>
+        <br>
+        <button class="btn glyphicon glyphicon-comment"> answer</button>
+
+    </div>
+</div>

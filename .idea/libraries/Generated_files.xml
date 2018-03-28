@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/src/app/home/home.component.js" />
+        <item url="file://$PROJECT_DIR$/src/app/app.module.js" />
+        <item url="file://$PROJECT_DIR$/src/app/app.component.js" />
+        <item url="file://$PROJECT_DIR$/src/app/addforum/addforum.component.js" />
+        <item url="file://$PROJECT_DIR$/src/app/app.routing.js" />
+        <item url="file://$PROJECT_DIR$/src/app/addforum/addforum.component.spec.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/app/home/home.component.js" />
+      <root url="file://$PROJECT_DIR$/src/app/app.module.js" />
+      <root url="file://$PROJECT_DIR$/src/app/app.component.js" />
+      <root url="file://$PROJECT_DIR$/src/app/addforum/addforum.component.js" />
+      <root url="file://$PROJECT_DIR$/src/app/app.routing.js" />
+      <root url="file://$PROJECT_DIR$/src/app/addforum/addforum.component.spec.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

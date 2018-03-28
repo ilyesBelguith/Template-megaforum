@@ -1,0 +1,25 @@
+
+<div class="sidebar-wrapper">
+
+<b>
+    <h3 >
+        <img src="/assets/img/mf.png" style="width: 92px; padding-left: 5px"/>
+        Mega<span style="color: #000000">Forum</span>
+    </h3>
+</b>
+
+
+
+
+
+
+    <ul  class="nav responsive-nav">
+        <li class="separator hidden-lg hidden-md"></li>
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+            <a  [routerLink]="[menuItem.path]">
+                <i class="{{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

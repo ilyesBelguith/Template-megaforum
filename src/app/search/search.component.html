@@ -1,0 +1,79 @@
+
+
+
+
+<div class="main-content">
+  <p><b>Have you thoroughly searched for an answer before asking your question?</b></p>
+  <p>We’d love to help you, but the reality is that not every question gets answered. To improve your chances:</p>
+  <p style="color: #d9534f">Try out the advanced search!</p>
+
+<br>
+  <div class="card" align="center">
+
+    <br>
+
+
+    <form class="form-inline ">
+
+      <sup><img src="assets/img/mf.png" style="width:50px;"/></sup>
+      <label class="checkbox-inline">
+        <h5 href="#" data-toggle="dropdown">
+          <p>All
+            <b class="caret"></b>
+          </p>
+        </h5>
+        <ul class="dropdown-menu">
+          <li><a href="#">Newest</a></li>
+          <li><a href="#">Favourite</a></li>
+          <li class="divider"></li>
+          <li><a href="#">MegaCor</a></li>
+          <li><a href="#">MegaCommon</a></li>
+          <li><a href="#">MegaCustody</a></li>
+          <li><a href="#">MegaTrade</a></li>
+          <li><a href="#">MegaFct</a></li>
+          <li><a href="#">MegaLend</a></li>
+        </ul>
+      </label>
+      <input type="text" class="form-control input-sm" style="width: 700px" placeholder="Search"  >
+      <sup><button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button></sup>
+    </form>
+    <br>
+  </div>
+
+<br>
+  <div class="well">
+    <a  *ngIf="!b" Class="pe-7s-angle-down" style="color:#909297; font-size: 20px; padding-left: 300px" (click)="show()"> proceed to question</a>
+    <a  *ngIf="b" Class="pe-7s-angle-up" style="color: #909297; font-size: 20px; padding-left: 350px" (click)="show()"> Cancel</a>
+    <div *ngIf="seen" >
+      <br>
+      <div class="well">
+
+        <div>
+          <label>Title:</label>
+        </div>
+
+        <div><input class="form-control" [(ngModel)]="title" type="text" id="title"></div>
+
+      </div>
+      <div>
+        <div>
+          <label>Description:</label>
+        </div>
+        <br>
+        <div [froalaEditor] [(ngModel)]="description"></div>
+        <br>
+        <div>
+          <label>Tags:</label>
+        </div>
+
+        <div><input class="form-control" [(ngModel)]="tags" type="text" id="tags"></div>
+      </div>
+      <br>
+      <button class="btn btn-danger"> Post question </button>
+    </div>
+  </div>
+   <br>
+
+</div>
+
+

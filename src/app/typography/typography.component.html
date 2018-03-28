@@ -1,0 +1,21 @@
+
+
+            <div class="col-md-12" >
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title"><a routerLink="/FAQ">FAQ</a></h4>
+                        <p class="category">Frequently asked questions:</p>
+                    </div>
+                    <div class="content">
+
+                        <tr *ngFor="let row of FAQs, let i=index" >
+                        <td>
+                           <a (click)="showFAQ(i)">{{row.title}}</a>
+                        </td>
+
+                        </tr>
+
+                    </div>
+                </div>
+            </div>
+
